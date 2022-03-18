@@ -1,0 +1,31 @@
+sudo docker run -it --rm --name rdev -h rdev -p 3000:3000 fullaxx/reactdev /bin/bash
+
+cd /opt
+npm install -g create-react-app
+npx create-react-app mediafe
+
+cd mediafe
+npm start
+
+Success! Created mediafe at /opt/mediafe
+Inside that directory, you can run several commands:
+
+  npm start
+    Starts the development server.
+
+  npm run build (and npm run server)
+    Bundles the app into static files for production.
+
+  npm test
+    Starts the test runner.
+
+  npm run eject
+    Removes this tool and copies build dependencies, configuration files
+    and scripts into the app directory. If you do this, you canât go back!
+
+We suggest that you begin by typing:
+
+  cd mediafe
+  npm start
+
+Happy hacking!

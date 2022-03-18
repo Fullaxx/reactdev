@@ -1,0 +1,31 @@
+sudo docker run -it --rm --name rdev -h rdev -p 3000:3000 -v repo:/opt/rcode fullaxx/reactdev /bin/bash
+
+cd /opt/rcode
+# npm cache clean -f
+npm install
+npm run build
+
+########################################
+# npm run build
+
+Creating an optimized production build...
+Compiled successfully.
+
+File sizes after gzip:
+
+  292.76 kB  build/static/js/main.d595a7f5.js
+  52.36 kB   build/static/css/main.5c8a304f.css
+  1.79 kB    build/static/js/787.92c661ba.chunk.js
+
+The project was built assuming it is hosted at /.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+You may serve it with a static server:
+
+  npm install -g serve
+  serve -s build
+
+Find out more about deployment here:
+
+  https://cra.link/deployment
