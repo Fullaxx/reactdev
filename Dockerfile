@@ -27,7 +27,7 @@ RUN curl -s ${NODEPKGURL} -o /tmp/node.tar.xz && \
     ln -s /opt/node/bin/npm /usr/bin/npm && \
     ln -s /opt/node/bin/npx /usr/bin/npx && \
     ln -s /opt/node/bin/corepack /usr/bin/corepack && \
-    npm install -g npm@8.5.5
+    npm install -g npm@8.6.0
 
 # ------------------------------------------------------------------------------
 # Expose ports.
