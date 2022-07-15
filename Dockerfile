@@ -7,7 +7,8 @@ MAINTAINER Brett Kuskie <fullaxx@gmail.com>
 # Set environment variables
 ENV LANG C
 ENV DEBIAN_FRONTEND noninteractive
-ENV NODEPKGURL https://nodejs.org/dist/v16.14.2/node-v16.14.2-linux-x64.tar.xz
+ENV NODEVERS 16.16.0
+ENV NODEPKGURL https://nodejs.org/dist/v${NODEVERS}/node-v${NODEVERS}-linux-x64.tar.xz
 
 # ------------------------------------------------------------------------------
 # Install base and clean up
@@ -21,7 +22,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN curl -s ${NODEPKGURL} -o /tmp/node.tar.xz && \
     tar xf /tmp/node.tar.xz -C /opt/ && \
     rm /tmp/node.tar.xz && \
-    mv /opt/node-* /opt/node && \
+    ln -s /opt/node-v${NODEVERS}-linux-x64 /opt/node && \
     ln -s /opt/node/bin/node /usr/bin/node && \
     ln -s /opt/node/bin/node /usr/bin/nodejs && \
     ln -s /opt/node/bin/npm /usr/bin/npm && \
