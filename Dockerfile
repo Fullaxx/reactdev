@@ -7,7 +7,7 @@ MAINTAINER Brett Kuskie <fullaxx@gmail.com>
 # Set environment variables
 ENV LANG C
 ENV DEBIAN_FRONTEND noninteractive
-ENV NODEVERS 16.16.0
+ENV NODEVERS 16.17.1
 ENV NODEPKGURL https://nodejs.org/dist/v${NODEVERS}/node-v${NODEVERS}-linux-x64.tar.xz
 
 # ------------------------------------------------------------------------------
@@ -28,7 +28,7 @@ RUN curl -s ${NODEPKGURL} -o /tmp/node.tar.xz && \
     ln -s /opt/node/bin/npm /usr/bin/npm && \
     ln -s /opt/node/bin/npx /usr/bin/npx && \
     ln -s /opt/node/bin/corepack /usr/bin/corepack && \
-    npm install -g npm@8.14.0
+    npm install -g npm@8.19.2
 
 # ------------------------------------------------------------------------------
 # Expose ports.
